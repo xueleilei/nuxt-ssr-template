@@ -49,8 +49,10 @@ module.exports = {
   ],
   // 配置路由中间件
   router: {
-    middleware: 'i18n'
-    // middleware: ['userAuth'],
+    middleware: [
+      'i18n',
+      'permission'
+    ]
     // base:"/en/"
     // base:"/"
   },
@@ -67,7 +69,8 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['cookie-universal-nuxt', { parseJSON: false }]
   ],
   styleResources: {
     stylus: './assets/css/css.styl'

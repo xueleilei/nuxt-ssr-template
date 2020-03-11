@@ -1,5 +1,14 @@
 <template>
   <header>
+    <div class="user-info">
+      <template v-if="token">
+        {{ token }}
+        <a href="javascript:;" @click="logOut()">{{ $t('global.logout') }}</a>
+      </template>
+      <template v-else>
+        <nuxt-link to="/login">{{ $t('global.login') }}</nuxt-link>
+      </template>
+    </div>
     <div class="header-container">
       <nuxt-link to="/" :class="{ 'active' : $route.name === 'index' }">{{ $t('headerNav.home') }}</nuxt-link> |
       <nuxt-link to="/users" :class="{ 'active' : $route.name.includes('users') }">{{ $t('headerNav.users') }}</nuxt-link>
@@ -18,6 +27,7 @@ export default {
   name: 'BaseFooter',
   computed: {
     ...mapState({
+      token: state => state.token,
       locale: state => state.locales.locale
     })
   },
@@ -25,6 +35,12 @@ export default {
     chooseLanguage(language) {
       this.$store.commit('locales/SET_LANGUAGE', language)
       this.$i18n.locale = language
+    },
+    logOut() {
+      this.$store.commit('SET_LOGOUT')
+      this.$router.push({
+        path: '/login?redirect=' + this.$route.path
+      })
     }
   }
 }
@@ -40,6 +56,18 @@ export default {
     background: #150E31;
     display: flex;
     justify-content: space-between;
+
+    .user-info {
+      padding-left: 10px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      color: #aaacc8;
+
+      a {
+        margin-left: 10px;
+      }
+    }
 
     .header-container {
       max-width: 990px;

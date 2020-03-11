@@ -3,9 +3,11 @@
   "global":{
     "login":"登入",
     "register":"註冊",
+    "logout":"註銷",
     "join":"加入",
     "confirm":"確認",
     "submit":"提交",
+    "reset":"重置",
     "all":"全部",
     "open":"打開",
     "close":"關閉",
@@ -15,6 +17,10 @@
   "headerNav": {
     "home": "首頁",
     "users":"用戶"
+  },
+  "login": {
+    "username": "用戶名",
+    "password": "密碼"
   },
   "footer": {
     "TermsOfUse": "服務條款",

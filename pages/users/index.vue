@@ -5,14 +5,17 @@
     <div>
       <UsersPageComponents />
       <br>
-      <br>
-      <br>
       <div>
-        <nuxt-link
-          v-for="(item, index) in dataList"
-          :key="index"
-          :to="'/users/' + item.relId"
-          class="item">{{ item.relId }} -- {{ item.sk }}</nuxt-link>
+        <ul>
+          <li
+            v-for="(item, index) in dataList"
+            :key="index">
+            <nuxt-link
+              :to="'/users/' + item.relId"
+              class="item">{{ item.relId }} -- {{ item.sk }}</nuxt-link>
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>
@@ -66,7 +69,6 @@ export default {
     height: 32px;
     line-height: 32px;
     font-size: 14px;
-    display: block;
     color: #47494E
 
     &:hover {

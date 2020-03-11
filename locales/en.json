@@ -3,9 +3,11 @@
   "global":{
     "login":"Sign in",
     "register":"Sign up",
+    "logout":"Logout",
     "join":"Join",
     "confirm":"Confirm",
     "submit":"Submit",
+    "reset":"Reset",
     "all":"All",
     "open":"Open",
     "close":"Close",
@@ -15,6 +17,10 @@
   "headerNav": {
     "home": "HOME",
     "users":"USERS"
+  },
+  "login": {
+    "username": "UserName",
+    "password": "Password"
   },
   "footer": {
     "TermsOfUse": "Terms of Use",
