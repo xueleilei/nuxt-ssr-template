@@ -10,8 +10,8 @@
       </template>
     </div>
     <div class="header-container">
-      <nuxt-link to="/" :class="{ 'active' : $route.name === 'index' }">{{ $t('headerNav.home') }}</nuxt-link> |
-      <nuxt-link to="/users" :class="{ 'active' : $route.name.includes('users') }">{{ $t('headerNav.users') }}</nuxt-link>
+      <nuxt-link to="/" :class="{ 'active' : $route.name && $route.name === 'index' }">{{ $t('headerNav.home') }}</nuxt-link> |
+      <nuxt-link to="/users" :class="{ 'active' : $route.name && $route.name.includes('users') }">{{ $t('headerNav.users') }}</nuxt-link>
     </div>
     <div class="language">
       <a href="javascript:;" :class="{ 'active' : locale === 'zh' }" @click="chooseLanguage('zh')">简体中文</a>
